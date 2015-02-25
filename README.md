@@ -29,11 +29,11 @@ label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
 
     setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP)
 
-+The second parameter states the distance between the edge of the bottom view and LabelView(unit dip)
++ The second parameter states the distance between the edge of the bottom view and LabelView(unit dip)
 
 ![](./img/img2.png)
 
-+The third parameter states the side of where LabelView should appear on the bottom view.  (only `LEFT_TOP` and `RIGHT_TOP`)
++ The third parameter states the side of where LabelView should appear on the bottom view.  (only `LEFT_TOP` and `RIGHT_TOP`)
 
 
 # remove label
@@ -69,8 +69,11 @@ public View getItemView(int position, View convertView, ViewHolder holder) {
 
 # setTargetViewInBaseAdapter parameters
 
-the second parameter means targetView width(unit dip).
++ The second parameter means targetView width(unit dip).
 
+# Thanks
+
++ [shaunidiot](https://github.com/shaunidiot) English ReadMe supported
 
 License
 ----------
