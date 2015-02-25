@@ -2,38 +2,38 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LabelView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1538)
 
-Sometimes we need to show a label view above a ImageView or others, labelview will help you, let code easy.
+Sometimes, we need to show a label above an ImageView or any other views. Well, LabelView will be able to help you. It's easy to implement as well!
 
 ![](./img/img1.png)
 
 ![](./img/img3.png)
 
 
-# import your project
+# Import your project
 
-you can copy LabelView.java file into you project.
+Copy [`LabelView.java`](Labelviewdemo/app/src/main/java/com/lid/labelviewdemo/LabelView.java) into your project.
 
-# create label
+# Create a Label
 
-LabelView extended TextView so you can use TextView all method.
+LabelView extends from `TextView` so you can treat it as a `TextView` and use any of its method.
+
+Usage:
 
 ```
-{
-    LabelView label = new LabelView(this);
-    label.setText("POP");
-    label.setBackgroundColor(0xff03a9f4);
-    label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
-}
+LabelView label = new LabelView(this);
+label.setText("POP");
+label.setBackgroundColor(0xff03a9f4);
+label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
 ```
 # setTargetView parameters
 
     setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP)
 
-the second parameter means distance(unit dip).
++The second parameter states the distance between the edge of the bottom view and LabelView(unit dip)
 
 ![](./img/img2.png)
 
-the third parameter means gravity (only LEFT_TOP and RIGHT_TOP)
++The third parameter states the side of where LabelView should appear on the bottom view.  (only `LEFT_TOP` and `RIGHT_TOP`)
 
 
 # remove label
@@ -88,3 +88,4 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
