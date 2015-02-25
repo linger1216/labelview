@@ -20,7 +20,7 @@
 
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -55,6 +55,17 @@
         android:text="TextView"
         android:textColor="#ffffff"
         android:layout_height="48dp" />
+
+
+    <Button
+        android:id="@+id/click"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="48dp"
+        android:background="#E91E63"
+        android:text="ListView demo"
+        android:textColor="#ffffff" />
 
 
 </LinearLayout>

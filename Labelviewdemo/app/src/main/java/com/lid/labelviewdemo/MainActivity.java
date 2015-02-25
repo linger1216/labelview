@@ -1,9 +1,12 @@
 package com.lid.labelviewdemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -14,18 +17,33 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         {
-            LabelView label = new LabelView(this);
+            final LabelView label = new LabelView(this);
             label.setText("CHINA");
             label.setBackgroundColor(0xffE91E63);
-            label.setTargetView(findViewById(R.id.image1), 20, LabelView.Gravity.LEFT_TOP);
+            label.setTargetView(findViewById(R.id.image1), 10, LabelView.Gravity.LEFT_TOP);
+
+            findViewById(R.id.image1).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    label.remove();
+                    Toast.makeText(MainActivity.this,"CHINA label remove",Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
 
         {
-            LabelView label = new LabelView(this);
+            final LabelView label = new LabelView(this);
             label.setText("Kunqu");
             label.setBackgroundColor(0xffE91E63);
-            label.setTargetView(findViewById(R.id.image2), 25, LabelView.Gravity.RIGHT_TOP);
+            label.setTargetView(findViewById(R.id.image2), 12, LabelView.Gravity.RIGHT_TOP);
+            findViewById(R.id.image2).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    label.remove();
+                    Toast.makeText(MainActivity.this,"Kunqu label remove",Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
 
@@ -33,8 +51,13 @@ public class MainActivity extends ActionBarActivity {
             LabelView label = new LabelView(this);
             label.setText("HD");
             label.setBackgroundColor(0xffE91E63);
-            label.setPadding(40,1,40,1);
-            label.setTargetView(findViewById(R.id.button), 8, LabelView.Gravity.RIGHT_TOP);
+            label.setTargetView(findViewById(R.id.button), 4, LabelView.Gravity.RIGHT_TOP);
+            findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,"button click",Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
 
@@ -42,10 +65,28 @@ public class MainActivity extends ActionBarActivity {
             LabelView label = new LabelView(this);
             label.setText("POP");
             label.setBackgroundColor(0xff03a9f4);
-            label.setPadding(40,1,40,1);
-            label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
+            label.setTargetView(findViewById(R.id.text), 5, LabelView.Gravity.LEFT_TOP);
+            findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,"please click ListView Demo",Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
+        {
+            LabelView label = new LabelView(this);
+            label.setText("click");
+            label.setBackgroundColor(0xff03a9f4);
+            label.setTargetView(findViewById(R.id.click), 8, LabelView.Gravity.RIGHT_TOP);
+            findViewById(R.id.click).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MainActivity.this, ListViewActivity.class);
+                    startActivity(i);
+                }
+            });
+        }
     }
 
 
