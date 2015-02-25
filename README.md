@@ -1,4 +1,7 @@
-# labelview
+# LabelView
+
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LabelView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1538)
+
 Sometimes we need to show a label view above a ImageView or others, labelview will help you, let code easy.
 
 ![](./img/img1.png)
