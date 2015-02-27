@@ -2,7 +2,7 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LabelView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1538)
 
-Sometimes, we need to show a label above an ImageView or any other views. Well, LabelView will be able to help you. It's easy to implement as well!
+Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelView** will be able to help you. It's easy to implement as well!
 
 ![](./img/img1.png)
 
@@ -29,7 +29,7 @@ label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
 
     setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP)
 
-+ The second parameter states the distance between the edge of the bottom view and LabelView(unit dip)
++ The second parameter states the distance between the edge of the bottom view and LabelView **(unit dip)**
 
 ![](./img/img2.png)
 
@@ -38,7 +38,7 @@ label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
 
 # remove label
 
-you can use remove method. eg:
+you can use `remove` method. eg:
 
 ```
 label.remove();
@@ -47,7 +47,7 @@ label.remove();
 
 # LabelView in BaseAdpter
 
-if you using LabelView in BaseAdpter and reuse of convertView, you have to generate label ID manual. eg:
+If you using LabelView in **BaseAdpter** and reuse of **convertView**, you have to generate label ID manual. eg:
 
 ```
 public View getItemView(int position, View convertView, ViewHolder holder) {
@@ -69,7 +69,7 @@ public View getItemView(int position, View convertView, ViewHolder holder) {
 
 # setTargetViewInBaseAdapter parameters
 
-+ The second parameter means targetView width(unit dip).
++ The second parameter means targetView **width (unit dip)**.
 
 # Thanks
 
