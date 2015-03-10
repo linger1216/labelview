@@ -11,7 +11,7 @@ Sometimes, we need to show a **label** above an ImageView or any other views. We
 
 # Import your project
 
-Copy [`LabelView.java`](Labelviewdemo/app/src/main/java/com/lid/labelviewdemo/LabelView.java) into your project.
+Copy [`LabelView.java`](lib/src/main/java/com/lid/lib/LabelView.java) into your project.
 
 # Create a Label
 
