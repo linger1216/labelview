@@ -11,7 +11,21 @@ Sometimes, we need to show a **label** above an ImageView or any other views. We
 
 # Import your project
 
+####Gradle
+
+```groovy
+dependencies {
+    compile 'com.lid.labelview:lib:0.1.1'
+}
+```
+
+If it doesn't work, please send me a email `lid.guan@gmail.com` or create an issue.
+
+####Or
+
 Copy [`LabelView.java`](lib/src/main/java/com/lid/lib/LabelView.java) into your project.
+
+
 
 # Create a Label
 
