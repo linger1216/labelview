@@ -3,9 +3,9 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LabelView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1538)
 
 
-**sorry all, because labview has a design problem, so there are some bugs, I'll be re-implemented in the near future.**
-**sorry all, because labview has a design problem, so there are some bugs, I'll be re-implemented in the near future.**
-
+**sorry all, because labview has a design problem, so there have some bugs, I'll be re-implemented in the near future.**
+**sorry all, because labview has a design problem, so there have some bugs, I'll be re-implemented in the near future.**
+**sorry all, because labview has a design problem, so there have some bugs, I'll be re-implemented in the near future.**
 
 
 Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelView** will be able to help you. It's easy to implement as well!
