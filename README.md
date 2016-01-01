@@ -12,6 +12,8 @@ The new LabelView is coming.
 2. Provide the LabelImageView, LabelButtonView, LabelTextView to implement the origin LabelView function.
 3. You can easily realize yours view, is not limited to the above.
 
+Sorry, this belated update.
+
 <br />
 
 Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelXXView** will be able to help you. It's easy to implement as well!
