@@ -2,113 +2,141 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-LabelView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1538)
 
+<br />
 
-**sorry all, because labview has a design problem, so there have some bugs, I'll be re-implemented in the near future.**
-**sorry all, because labview has a design problem, so there have some bugs, I'll be re-implemented in the near future.**
-**sorry all, because labview has a design problem, so there have some bugs, I'll be re-implemented in the near future.**
+**2016/1/1 UPDATED**
 
+The new LabelView is coming.
 
-Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelView** will be able to help you. It's easy to implement as well!
+1. Rewrite all logic.
+2. Provide the LabelImageView, LabelButtonView, LabelTextView to implement the origin LabelView function.
+3. You can easily realize yours view, is not limited to the above.
+
+<br />
+
+Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelXXView** will be able to help you. It's easy to implement as well!
 
 ![](./img/img1.png)
 
 ![](./img/img3.png)
 
 
+
 # Import your project
 
-####Gradle
+#### Gradle
 
-```groovy
-dependencies {
-    compile 'com.lid.labelview:lib:0.1.1'
-}
-```
+**It will provide gradle way soon**
 
-If it doesn't work, please send me a email `lid.guan@gmail.com` or create an issue.
+#### Or
 
-####Or
-
-Copy [`LabelView.java`](lib/src/main/java/com/lid/lib/LabelView.java) into your project.
+Copy all `java files` and `attr.xml` into your project.
 
 
 
 # Create a Label
 
-LabelView extends from `TextView` so you can treat it as a `TextView` and use any of its method.
 
-Usage:
 
+put xml code in you layout, like follows.
+
+
+
+##  LabelButtonView
+
+
+
+``` java
+<com.lid.lib.LabelButtonView
+    android:id="@+id/labelbutton"
+    android:layout_width="200dp"
+    android:layout_height="48dp"
+    android:background="#03a9f4"
+    android:gravity="center"
+    android:text="Button"
+    android:textColor="#ffffff"
+    app:label_backgroundColor="#C2185B"
+    app:label_distance="20dp"
+    app:label_height="20dp"
+    app:label_orientation="RIGHT_TOP"
+    app:label_text="HD"
+    app:label_textSize="12sp" />
 ```
-LabelView label = new LabelView(this);
-label.setText("POP");
-label.setBackgroundColor(0xff03a9f4);
-label.setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP);
+
+
+
+## LabelImageView
+
+
+
+``` 
+<com.lid.lib.LabelImageView
+    android:id="@+id/image1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:scaleType="centerCrop"
+    android:src="@mipmap/image1"
+    app:label_backgroundColor="#C2185B"
+    app:label_orientation="LEFT_TOP"
+    app:label_text="CHINA" />
 ```
-# setTargetView parameters
 
-    setTargetView(findViewById(R.id.text), 10, LabelView.Gravity.LEFT_TOP)
 
-+ The second parameter states the distance between the edge of the bottom view and LabelView **(unit dip)**
+
+
+
+## LabelTextView
+
+
+
+``` 
+<com.lid.lib.LabelTextView
+    android:id="@+id/text"
+    android:layout_width="wrap_content"
+    android:layout_height="48dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dp"
+    android:background="#212121"
+    android:gravity="center"
+    android:padding="16dp"
+    android:text="TextView"
+    android:textColor="#ffffff"
+    app:label_backgroundColor="#03A9F4"
+    app:label_distance="15dp"
+    app:label_orientation="LEFT_TOP"
+    app:label_text="POP"
+    app:label_textSize="10sp" />
+```
+
+
+
+
+
+# Parameter Description
 
 ![](./img/img2.png)
 
-+ The third parameter states the side of where LabelView should appear on the bottom view.  (only `LEFT_TOP` and `RIGHT_TOP`)
 
-
-# remove label
-
-you can use `remove` method. eg:
-
-```
-label.remove();
-```
-
-
-# LabelView in BaseAdpter
-
-If you using LabelView in **BaseAdpter** and reuse of **convertView**, you have to generate label ID manual. eg:
-
-```
-public View getItemView(int position, View convertView, ViewHolder holder) {
-
-	......
-	
-    // you have to generate label ID manual
-    LabelView label = holder.getView(12345);
-    if (label == null) {
-        label = new LabelView(this);
-        label.setId(12345);
-        label.setBackgroundColor(0xffE91E63);
-        label.setTargetViewInBaseAdapter(imageView, 138, 10, LabelView.Gravity.LEFT_TOP);
-    }
-    label.setText(your data);
-    return convertView;
-}
-```
-
-# setTargetViewInBaseAdapter parameters
-
-+ The second parameter means targetView **width (unit dip)**.
 
 # Thanks
 
 + [shaunidiot](https://github.com/shaunidiot) English ReadMe supported
 
-License
-----------
+## License
 
-    Copyright 2014 linger1216
+``` 
+Copyright 2014 linger1216
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

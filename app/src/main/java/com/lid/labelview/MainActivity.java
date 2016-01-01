@@ -3,12 +3,11 @@ package com.lid.labelview;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import com.lid.lib.LabelView;
+import com.lid.lib.LabelButtonView;
+import com.lid.lib.LabelImageView;
+import com.lid.lib.LabelTextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,98 +17,53 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        {
-            final LabelView label = new LabelView(this);
-            label.setText("CHINA");
-            label.setBackgroundColor(0xffE91E63);
-            label.setTargetView(findViewById(R.id.image1), 10, LabelView.Gravity.LEFT_TOP);
 
-            findViewById(R.id.image1).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    label.remove();
-                    Toast.makeText(MainActivity.this,"CHINA label remove",Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        final LabelButtonView labelButtonView = (LabelButtonView)findViewById(R.id.labelbutton);
+        labelButtonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                labelButtonView.setLabelVisual(!labelButtonView.isLabelVisual());
+            }
+        });
 
+        final LabelImageView labelImageView1 = (LabelImageView)findViewById(R.id.image1);
+        labelImageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                labelImageView1.setLabelDistance(50);
+            }
+        });
 
-        {
-            final LabelView label = new LabelView(this);
-            label.setText("Kunqu");
-            label.setBackgroundColor(0xffE91E63);
-            label.setTargetView(findViewById(R.id.image2), 12, LabelView.Gravity.RIGHT_TOP);
-            findViewById(R.id.image2).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    label.remove();
-                    Toast.makeText(MainActivity.this,"Kunqu label remove",Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        final LabelImageView labelImageView2 = (LabelImageView)findViewById(R.id.image2);
+        labelImageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                labelImageView2.setLabelText("ART");
+            }
+        });
 
 
-        {
-            LabelView label = new LabelView(this);
-            label.setText("HD");
-            label.setBackgroundColor(0xffE91E63);
-            label.setTargetView(findViewById(R.id.button), 4, LabelView.Gravity.RIGHT_TOP);
-            findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,"button click",Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        final LabelTextView labelTextView = (LabelTextView)findViewById(R.id.text);
+        labelTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                labelTextView.setLabelOrientation(3);
+            }
+        });
 
 
-        {
-            LabelView label = new LabelView(this);
-            label.setText("POP");
-            label.setBackgroundColor(0xff03a9f4);
-            label.setTargetView(findViewById(R.id.text), 5, LabelView.Gravity.LEFT_TOP);
-            findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,"please click ListView Demo",Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        findViewById(R.id.click).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ListViewActivity.class));
+            }
+        });
 
-        {
-            LabelView label = new LabelView(this);
-            label.setText("click");
-            label.setBackgroundColor(0xff03a9f4);
-            label.setTargetView(findViewById(R.id.click), 8, LabelView.Gravity.RIGHT_TOP);
-            findViewById(R.id.click).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this, ListViewActivity.class);
-                    startActivity(i);
-                }
-            });
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        findViewById(R.id.click11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, RecyclerViewActivity.class));
+            }
+        });
     }
 }
