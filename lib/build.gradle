@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 21
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -22,11 +22,6 @@ android {
         }
     }
 }
-
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-}
-
 
 def siteUrl = 'https://github.com/linger1216/labelview'
 def gitUrl = 'https://github.com/linger1216/labelview.git'
