@@ -76,6 +76,10 @@ public class LabelImageView extends ImageView {
         utils.setLabelBackgroundColor(this, backgroundColor);
     }
 
+    public void setLabelBackgroundAlpha(int alpha) {
+        utils.setLabelBackgroundAlpha(this, alpha);
+    }
+
     public String getLabelText() {
         return utils.getLabelText();
     }

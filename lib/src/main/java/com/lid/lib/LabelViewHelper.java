@@ -44,6 +44,7 @@ public class LabelViewHelper {
     private Rect textBound;
 
     private Context context;
+    private int alpha;
 
     public LabelViewHelper(Context context, AttributeSet attrs, int defStyleAttr) {
 
@@ -80,7 +81,7 @@ public class LabelViewHelper {
     }
 
     public void onDraw(Canvas canvas, int measuredWidth, int measuredHeight) {
-        if (!visual) {
+        if (!visual || text == null) {
             return;
         }
 
@@ -88,6 +89,9 @@ public class LabelViewHelper {
         calcOffset(actualDistance, measuredWidth, measuredHeight);
 
         rectPaint.setColor(backgroundColor);
+        if (alpha != 0) {
+            rectPaint.setAlpha(alpha);
+        }
         rectPaint.setStrokeWidth(height);
 
         rectPath.reset();
@@ -205,12 +209,20 @@ public class LabelViewHelper {
         }
     }
 
+
+    public void setLabelBackgroundAlpha(View view, int alpha) {
+        if (this.alpha != alpha) {
+            this.alpha = alpha;
+            view.invalidate();
+        }
+    }
+
     public String getLabelText() {
         return text;
     }
 
     public void setLabelText(View view, String text) {
-        if (!this.text.equals(text)) {
+        if (this.text == null || !this.text.equals(text)) {
             this.text = text;
             view.invalidate();
         }
