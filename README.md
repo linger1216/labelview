@@ -4,16 +4,6 @@
 
 <br />
 
-**2016/1/1 UPDATED**
-
-The new LabelView is coming.
-
-1. Rewrite all logic.
-2. Provide the LabelImageView, LabelButtonView, LabelTextView to implement the origin LabelView function.
-3. You can easily realize yours view, is not limited to the above.
-
-Sorry, this belated update.
-
 <br />
 
 Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelXXView** will be able to help you. It's easy to implement as well!
@@ -28,13 +18,61 @@ Sometimes, we need to show a **label** above an ImageView or any other views. We
 
 #### Gradle
 
-**It will provide gradle way soon**
+**Step 1.** Add the JitPack repository to your build file
 
-#### Or
+Add it in your **root build.gradle** at the end of repositories:
+
+```
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+
+<br />
+
+**Step 2.** Add the dependency
+
+```
+dependencies {
+	compile 'com.github.linger1216:labelview:v1.1.0'
+}
+```
+
+<br />
+
+#### Maven
+
+**Step 1.** Add the JitPack repository to your build file
+
+```
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+
+**Step 2.** Add the dependency
+
+```
+<dependency>
+    <groupId>com.github.linger1216</groupId>
+    <artifactId>labelview</artifactId>
+    <version>v1.1.0</version>
+</dependency>
+```
+
+<br />
+
+#### Or Manual
 
 Copy all `java files` and `attr.xml` into your project.
 
-
+<br />
 
 # Create a Label
 
@@ -48,7 +86,7 @@ put xml code in you layout, like follows.
 
 
 
-``` java
+```java
 <com.lid.lib.LabelButtonView
     android:id="@+id/labelbutton"
     android:layout_width="200dp"
@@ -71,7 +109,7 @@ put xml code in you layout, like follows.
 
 
 
-``` 
+```
 <com.lid.lib.LabelImageView
     android:id="@+id/image1"
     android:layout_width="0dp"
@@ -92,7 +130,7 @@ put xml code in you layout, like follows.
 
 
 
-``` 
+```
 <com.lid.lib.LabelTextView
     android:id="@+id/text"
     android:layout_width="wrap_content"
@@ -132,7 +170,7 @@ put xml code in you layout, like follows.
 
 like as follows:
 
-``` java
+```java
 public class LabelXXXView extends YourView {
     LabelViewHelper utils;
     public LabelXXXView(Context context) {
@@ -211,11 +249,11 @@ public class LabelXXXView extends YourView {
 
 # Thanks
 
-+ [shaunidiot](https://github.com/shaunidiot) English ReadMe supported
+- [shaunidiot](https://github.com/shaunidiot) English ReadMe supported
 
 ## License
 
-``` 
+```
 Copyright 2014 linger1216
 
 Licensed under the Apache License, Version 2.0 (the "License");
