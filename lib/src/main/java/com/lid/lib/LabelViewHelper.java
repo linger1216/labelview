@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 public class LabelViewHelper {
@@ -103,7 +104,10 @@ public class LabelViewHelper {
         textPaint.setColor(textColor);
         textPaint.getTextBounds(text, 0, text.length(), textBound);
 
-        canvas.drawTextOnPath(text, rectPath, (1.4142135f * actualDistance) / 2 - textBound.width() / 2, textBound.height() / 2, textPaint);
+        float begin_w_offset = (1.4142135f * actualDistance) / 2 - textBound.width() / 2;
+        if (begin_w_offset < 0) begin_w_offset = 0;
+
+        canvas.drawTextOnPath(text, rectPath, begin_w_offset, textBound.height() / 2, textPaint);
     }
 
     private void calcOffset(float actualDistance, int measuredWidth, int measuredHeight) {
