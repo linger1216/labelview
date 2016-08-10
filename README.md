@@ -35,7 +35,7 @@ allprojects {
 
 ```
 dependencies {
-	compile 'com.github.linger1216:labelview:v1.1.0'
+	compile 'com.github.linger1216:labelview:v1.1.1'
 }
 ```
 
