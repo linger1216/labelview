@@ -1,6 +1,7 @@
 package com.lid.labelview;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -42,6 +43,7 @@ public class ListViewActivity extends ActionBarActivity {
             LabelImageView imageView = holder.getView(R.id.image);
             imageView.setImageResource(Integer.parseInt(item.image));
             imageView.setLabelText("LID " + position);
+            imageView.setLabelTextStyle(Typeface.BOLD);
 
             return convertView;
         }
