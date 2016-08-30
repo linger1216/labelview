@@ -95,6 +95,14 @@ public class LabelImageView extends ImageView {
     public void setLabelTextSize(int textSize) {
         utils.setLabelTextSize(this, textSize);
     }
+
+    public int getLabelTextStyle(){
+        return utils.getLabelTextStyle();
+    }
+
+    public void setLabelTextStyle(int textStyle){
+        utils.setLabelTextStyle(this, textStyle);
+    }
 }
 
 

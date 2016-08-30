@@ -6,6 +6,12 @@
         <attr name="label_backgroundColor" format="color"/>
         <attr name="label_text" format="string"/>
         <attr name="label_textSize" format="dimension" />
+        <attr name="label_textStyle" format="enum" >
+            <enum name="NORMAL" value="0"/>
+            <enum name="BOLD" value="1"/>
+            <enum name="ITALIC" value="2"/>
+            <enum name="BOLD_ITALIC" value="3"/>
+        </attr>
         <attr name="label_textColor" format="color"/>
         <attr name="label_visual" format="boolean"/>
         <attr name="label_orientation" format="enum">
