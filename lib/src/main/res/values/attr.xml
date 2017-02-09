@@ -3,7 +3,9 @@
     <declare-styleable name="LabelView">
         <attr name="label_distance" format="dimension" />
         <attr name="label_height" format="dimension"/>
+        <attr name="label_strokeWidth" format="dimension"/>
         <attr name="label_backgroundColor" format="color"/>
+        <attr name="label_strokeColor" format="color"/>
         <attr name="label_text" format="string"/>
         <attr name="label_textSize" format="dimension" />
         <attr name="label_textColor" format="color"/>
