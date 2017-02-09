@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,7 @@ public class LabelViewHelper {
     private static final int DEFAULT_STROKE_COLOR = 0xFFFFFFFF;
     private static final int DEFAULT_TEXT_COLOR = 0xFFFFFFFF;
     private static final int DEFAULT_ORIENTATION = LEFT_TOP;
+    private static final int DEFAULT_TEXT_STYLE = 0;
 
     private int distance;
     private int height;
@@ -34,6 +36,7 @@ public class LabelViewHelper {
     private int backgroundColor;
     private int strokeColor;
     private int textSize;
+    private int textStyle;
     private int textColor;
     private boolean visual;
     private int orientation;
@@ -66,6 +69,7 @@ public class LabelViewHelper {
         backgroundColor = attributes.getColor(R.styleable.LabelView_label_backgroundColor, DEFAULT_BACKGROUND_COLOR);
         strokeColor = attributes.getColor(R.styleable.LabelView_label_strokeColor, DEFAULT_STROKE_COLOR);
         textSize = attributes.getDimensionPixelSize(R.styleable.LabelView_label_textSize, dip2Px(DEFAULT_TEXT_SIZE));
+        textStyle = attributes.getInt(R.styleable.LabelView_label_textStyle, DEFAULT_TEXT_STYLE);
         textColor = attributes.getColor(R.styleable.LabelView_label_textColor, DEFAULT_TEXT_COLOR);
         visual = attributes.getBoolean(R.styleable.LabelView_label_visual, true);
         orientation = attributes.getInteger(R.styleable.LabelView_label_orientation, DEFAULT_ORIENTATION);
@@ -118,6 +122,7 @@ public class LabelViewHelper {
         textPaint.setTextSize(textSize);
         textPaint.setColor(textColor);
         textPaint.getTextBounds(text, 0, text.length(), textBound);
+        textPaint.setTypeface(Typeface.defaultFromStyle(textStyle));
 
         float begin_w_offset = (1.4142135f * actualDistance) / 2 - textBound.width() / 2;
         if (begin_w_offset < 0) begin_w_offset = 0;
@@ -321,5 +326,15 @@ public class LabelViewHelper {
             this.textSize = textSize;
             view.invalidate();
         }
+    }
+
+    public int getLabelTextStyle(){
+        return textStyle;
+    }
+
+    public void setLabelTextStyle(View view, int textStyle){
+        if(this.textStyle == textStyle) return;
+        this.textStyle = textStyle;
+        view.invalidate();
     }
 }

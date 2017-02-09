@@ -28,7 +28,8 @@
     app:label_height="20dp"
     app:label_orientation="RIGHT_TOP"
     app:label_text="HD"
-    app:label_textSize="12sp" />
+    app:label_textSize="12sp"
+    app:label_textStyle="BOLD"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +45,8 @@
                 android:src="@mipmap/image1"
                 app:label_backgroundColor="#C2185B"
                 app:label_orientation="LEFT_TOP"
-                app:label_text="CHINA" />
+                app:label_text="CHINA"
+                app:label_textStyle="ITALIC"/>
 
 
             <com.lid.lib.LabelImageView
@@ -75,7 +77,8 @@
     app:label_distance="15dp"
     app:label_orientation="LEFT_TOP"
     app:label_text="POP"
-    app:label_textSize="10sp" />
+    app:label_textSize="10sp"
+    app:label_textStyle="BOLD_ITALIC"/>
 
 
         <com.lid.lib.LabelButtonView
