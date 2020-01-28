@@ -4,7 +4,7 @@
 
 <br />
 
-Sometimes, we need to show a **label** above an ImageView or any other views. Well, **LabelXXView** will be able to help you. It's easy to implement as well!
+Sometimes, we need to **show a label** above an ImageView or any other views. Well, **LabelXXView** will be able to help you. It's easy to implement as well!
 
 ![](./img/img1.png)
 
