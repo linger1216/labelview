@@ -136,7 +136,7 @@ put xml code in you layout, like follows.
 
 
 
-1. create an new view class extends `YourView`
+1. create a new view class extends `YourView`
 2. use LabelViewHelper as your `Member objects`
 3. In Constructor function and onDraw function call LabelViewHelper method.
 4. Call the LabelViewHelper method in other functions
